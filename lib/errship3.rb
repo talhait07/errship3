@@ -2,7 +2,7 @@ require 'rescuers/active_record' if defined?(::ActiveRecord)
 require 'rescuers/mongoid' if defined?(::Mongoid)
 require 'rescuers/mongo_mapper' if defined?(::MongoMapper)
 
-module Errship
+module Errship3
   class Engine < ::Rails::Engine
     paths['app/routes']      = 'config/routes.rb'
     paths['app/views']      << 'app/views'
@@ -17,27 +17,27 @@ module Errship
       unless Rails.application.config.consider_all_requests_local
         base.rescue_from ActionController::RoutingError, :with => :render_404_error
         base.rescue_from ActionController::UnknownController, :with => :render_404_error
-        base.rescue_from ActionController::UnknownAction, :with => :render_404_error
+        base.rescue_from ::AbstractController::ActionNotFound, :with => :render_404_error
       end
     end
 
-    def render_error(exception, errship_scope = false)
+    def render_error(exception, errship3_scope = false)
       airbrake_class.send(:notify, exception) if airbrake_class
-      render :template => '/errship/standard', :locals => {
-        :status_code => 500, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 500)
+      render :template => '/errship3/standard', :locals => {
+        :status_code => 500, :errship3_scope => errship3_scope }, :status => (Errship3.status_code_success ? 200 : 500)
     end
 
-    def render_404_error(exception = nil, errship_scope = false)
-      render :template => '/errship/standard', :locals => {
-        :status_code => 404, :errship_scope => errship_scope }, :status => (Errship.status_code_success ? 200 : 404)
+    def render_404_error(exception = nil, errship3_scope = false)
+      render :template => '/errship3/standard', :locals => {
+        :status_code => 404, :errship3_scope => errship3_scope }, :status => (Errship3.status_code_success ? 200 : 404)
     end
 
     # A blank page with just the layout and flash message, which can be redirected to when
     # all else fails.
-    def errship_standard(errship_scope = false)
+    def errship3_standard(errship3_scope = false)
       flash[:error] ||= 'An unknown error has occurred, or you have reached this page by mistake.'
-      render :template => '/errship/standard', :locals => {
-        :status_code => 500, :errship_scope => errship_scope }
+      render :template => '/errship3/standard', :locals => {
+        :status_code => 500, :errship3_scope => errship3_scope }
     end
 
     # Set the error flash and attempt to redirect back. If RedirectBackError is raised,

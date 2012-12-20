@@ -1,4 +1,4 @@
-module Errship
+module Errship3
   module Mongoid
     module Rescuers
       def self.included(base)
