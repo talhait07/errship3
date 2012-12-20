@@ -1,4 +1,4 @@
-= => errship
+= => errship3
 
 The static error pages Rails comes with are nice for getting started - you can't
 break them, no matter what. But without your layout and navigation wrapped around
@@ -10,9 +10,9 @@ when you make a change?
 Worse, what if you run a network of many Rails applications? Should they share one
 error page style? Should they all have their own?
 
-You could hire your nephew to keep them all up to date... or you can use Errship.
+You could hire your nephew to keep them all up to date... or you can use Errship3.
 
-Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports
+Errship3 is a Rails 3.1 engine for rendering error pages inside your layout. It supports
 i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.
 
 You can also use the flashback method to set an error message and redirect :back safely - if
@@ -22,14 +22,14 @@ the flash message anyway.
 == Installation
 
 Add this to your Gemfile
-    gem 'errship', '~> 2.2.0'
+    gem 'errship3', '~> 3.0.0'
 
 Add this to your ApplicationController
     class ApplicationController < ActionController::Base
-      include Errship::Rescuers
-      include Errship::ActiveRecord::Rescuers # or replace 'ActiveRecord' with MongoMapper, or Mongoid
+      include Errship3::Rescuers
+      include Errship3::ActiveRecord::Rescuers # or replace 'ActiveRecord' with MongoMapper, or Mongoid
 
-Errship is ready to go! To test it out in development, you'll need to set
+Errship3 is ready to go! To test it out in development, you'll need to set
 
     config.consider_all_requests_local = false
 
@@ -40,20 +40,20 @@ Alternatively, simply point your browser to /error or /not_found to get a taste.
 
 == Configuration
 
-Errship renders all error pages with a HTTP status of 200 by default. This is
+Errship3 renders all error pages with a HTTP status of 200 by default. This is
 done to ensure that the error page is rendered if the web server is configured
 to intercept errors (e.g. proxy_intercept_errors for nginx). If you want to
 have the correct status codes for your errors, add the following to an
 initializer:
 
-    Errship.status_code_success = false
+    Errship3.status_code_success = false
 
 == I18n
 
 If you want to edit the text that is rendered, add the following to your config/locales/*.yml
 
     en:
-      errship:
+      errship3:
         '404':
           title: 'This page does not exist.'
           description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
@@ -65,7 +65,7 @@ If you want to edit the text that is rendered, add the following to your config/
 
 == Custom Rescuers
 
-If you want errship to rescue errors from your own custom exception class, you need
+If you want errship3 to rescue errors from your own custom exception class, you need
 to add a custom rescuer in your ApplicationController, like so:
 
     # Render the 404 page
@@ -82,7 +82,7 @@ like this one:
 and then add your text for that scope to config/locales/*.yml
 
     en:
-      errship:
+      errship3:
         '404':
           title: 'This page does not exist.'
           description: 'It could have moved, or someone (maybe you!) mistyped the URL.'
@@ -93,8 +93,8 @@ and then add your text for that scope to config/locales/*.yml
 
 The following methods are provided:
 
-* render_error(exception, errship_scope = false) # Render the 500 page
-* render_404_error(exception = nil, errship_scope = false) # Render the 404 page
+* render_error(exception, errship3_scope = false) # Render the 500 page
+* render_404_error(exception = nil, errship3_scope = false) # Render the 404 page
 * flashback(error_message) # Set the flash and redirect back (RedirectBackError-safe)
 
 If Airbrake is installed, every rescuer will report the exception, except for 404.
@@ -124,7 +124,7 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
   - Breaks out ORM error handling into submodules. Not backwards compatible.
 
 1.1.0
-  - Adds option to specify a custom errship_scope to use with I18n, allowing each 
+  - Adds option to specify a custom errship3_scope to use with I18n, allowing each
     rescuer to customize the messages displayed.
 
 1.0.0
@@ -134,7 +134,7 @@ If Airbrake is installed, every rescuer will report the exception, except for 40
   - i18n support
   - No default styles - blends seamlessly into its host layout.
 
-== Contributing to errship
+== Contributing to errship3
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

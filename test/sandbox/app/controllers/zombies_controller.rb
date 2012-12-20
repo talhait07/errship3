@@ -1,7 +1,7 @@
 class ZombiesController < ApplicationController
-  include Errship::Mongoid::Rescuers
+  include Errship3::Mongoid::Rescuers
 
   def index
-    raise Mongoid::Errors::DocumentNotFound.new(User, 1)
+    raise Mongoid::Errors::DocumentNotFound.new(User, :id => 1)
   end
 end

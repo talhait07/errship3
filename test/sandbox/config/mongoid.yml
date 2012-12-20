@@ -1,5 +1,6 @@
 defaults: &defaults
   host: localhost
+  logger: false
 
 development:
   <<: *defaults

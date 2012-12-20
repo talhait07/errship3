@@ -14,13 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "errship"
-  gem.homepage = "https://github.com/agoragames/errship"
+  gem.name = "errship3"
+  gem.homepage = "https://github.com/dynamicguy/errship3"
   gem.license = "MIT"
-  gem.summary = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout.}
-  gem.description = %Q{Errship is a Rails 3.1 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
-  gem.email = ["lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
-  gem.authors = ["Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  gem.summary = %Q{Errship3 is a Rails 3.2 engine for rendering error pages inside your layout.}
+  gem.description = %Q{Errship3 is a Rails 3.2 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
+  gem.email = ["Nurul Ferdous", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
+  gem.authors = ["nurul@ferdo.us", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
   gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   # dependencies defined in Gemfile
 end
@@ -33,22 +33,14 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
-
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "errship #{version}"
+  rdoc.title = "errship3 #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

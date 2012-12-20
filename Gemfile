@@ -8,13 +8,14 @@ source "http://rubygems.org"
 group :development do
   gem 'rake', '>= 0'
   gem "shoulda", ">= 0"
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.6.0"
-  gem "rcov", ">= 0"
+  gem "bundler", ">= 1.0.0"
+  gem "jeweler", ">= 1.6.0"
 end
 
+gem 'simplecov', :require => false, :group => :test
+
 group :test do
-  gem 'rails', '3.1.1'
+  gem 'rails', '3.2.9'
   gem 'sqlite3-ruby'
   gem 'mocha', :require => false
   gem 'mongoid'
