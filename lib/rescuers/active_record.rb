@@ -1,4 +1,4 @@
-module Errship
+module Errship3
   module ActiveRecord
     module Rescuers
       def self.included(base)
