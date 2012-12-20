@@ -8,26 +8,26 @@ Gem::Specification.new do |s|
   s.version = "3.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Nurul Ferdous", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  s.authors = ["nurul@ferdo.us", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
   s.date = "2012-12-20"
   s.description = "Errship3 is a Rails 3.2 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking."
-  s.email = ["nurul@ferdo.us", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
+  s.email = ["Nurul Ferdous", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
   s.extra_rdoc_files = [
-      "LICENSE.txt",
-      "README.rdoc"
+    "LICENSE.txt",
+    "README.rdoc"
   ]
   s.files = [
-      "app/assets/javascripts/application.js",
-      "app/assets/stylesheets/errship3.css",
-      "app/views/errship3/standard.html.erb",
-      "config/locales/en.yml",
-      "config/routes.rb",
-      "lib/errship3.rb",
-      "lib/rescuers/active_record.rb",
-      "lib/rescuers/mongo_mapper.rb",
-      "lib/rescuers/mongoid.rb"
+    "app/assets/javascripts/application.js",
+    "app/assets/stylesheets/errship3.css",
+    "app/views/errship3/standard.html.erb",
+    "config/locales/en.yml",
+    "config/routes.rb",
+    "lib/errship3.rb",
+    "lib/rescuers/active_record.rb",
+    "lib/rescuers/mongo_mapper.rb",
+    "lib/rescuers/mongoid.rb"
   ]
-  s.homepage = "https://github.com/agoragames/errship3"
+  s.homepage = "https://github.com/dynamicguy/errship3"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
