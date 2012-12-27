@@ -6,6 +6,7 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
+
   gem 'rake', '>= 0'
   gem "shoulda", ">= 0"
   gem "bundler", ">= 1.0.0"
@@ -13,9 +14,12 @@ group :development do
 end
 
 gem 'simplecov', :require => false, :group => :test
+group :test, :development do
+  gem 'rails', '3.2.9'
+end
 
 group :test do
-  gem 'rails', '3.2.9'
+
   gem 'sqlite3-ruby'
   gem 'mocha', :require => false
   gem 'mongoid'

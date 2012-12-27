@@ -19,15 +19,24 @@ You can also use the flashback method to set an error message and redirect :back
 a RedirectBackError is raised, the user is dropped off at the nearest error page and given 
 the flash message anyway.
 
+Now it will also support twitter bootstrap
+
 == Installation
 
 Add this to your Gemfile
-    gem 'errship3', '~> 3.0.0'
+    gem 'errship3', '~> 3.0.1'
 
 Add this to your ApplicationController
     class ApplicationController < ActionController::Base
       include Errship3::Rescuers
       include Errship3::ActiveRecord::Rescuers # or replace 'ActiveRecord' with MongoMapper, or Mongoid
+
+You can generate the view file to customize yourself
+     rails g errship3:view
+this will generate a view file on your app/views/errship3/standard.html.erb
+
+You can customize it yourself.
+
 
 Errship3 is ready to go! To test it out in development, you'll need to set
 
