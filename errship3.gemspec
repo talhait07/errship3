@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = "3.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Nurul Ferdous", "Irfan Rizvi","Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  s.authors = ["Irfan Rizvi","Nurul Ferdous", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
   s.date = "2012-12-27"
   s.description = "Errship3 is a Rails 3.2 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking."
   s.email = ["irfanonrails@gmail.com","nurul@ferdo.us", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "config/locales/en.yml",
     "config/routes.rb",
     "lib/errship3.rb",
+    "lib/generators/errship3/templates/standard.html.erb",
     "lib/generators/errship3/view_generator.rb",
     "lib/rescuers/active_record.rb",
     "lib/rescuers/mongo_mapper.rb",
