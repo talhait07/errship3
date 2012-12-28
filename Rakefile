@@ -19,8 +19,8 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{Errship3 is a Rails 3.2 engine for rendering error pages inside your layout.}
   gem.description = %Q{Errship3 is a Rails 3.2 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking.}
-  gem.email = ["Nurul Ferdous", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
-  gem.authors = ["nurul@ferdo.us", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  gem.email = ["irfanonrails@gmail.com", "nurul@ferdo.us", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
+  gem.authors = ["Irfan Rizvi", "Nurul Ferdous", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
   gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   # dependencies defined in Gemfile
 end

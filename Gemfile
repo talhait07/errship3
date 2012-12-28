@@ -26,4 +26,3 @@ group :test do
   gem 'mongo_mapper'
   gem 'bson_ext'
 end
-

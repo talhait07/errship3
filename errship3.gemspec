@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "3.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Irfan Rizvi","Nurul Ferdous", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
-  s.date = "2012-12-27"
+  s.authors = ["Irfan Rizvi", "Nurul Ferdous", "Logan Koester", "Matthew Wilson", "David Czarnecki"]
+  s.date = "2012-12-28"
   s.description = "Errship3 is a Rails 3.2 engine for rendering error pages inside your layout. It supports i18n, custom exceptions, and Airbrake (Hoptoad) error tracking."
-  s.email = ["irfanonrails@gmail.com","nurul@ferdo.us", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
+  s.email = ["irfanonrails@gmail.com", "nurul@ferdo.us", "lkoester@agoragames.com", "mwilson@agoragames.com", "dczarnecki@agoragames.com"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dynamicguy/errship3"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.23"
   s.summary = "Errship3 is a Rails 3.2 engine for rendering error pages inside your layout."
 
   if s.respond_to? :specification_version then
