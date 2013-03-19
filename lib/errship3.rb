@@ -15,9 +15,11 @@ module Errship3
   module Rescuers
     def self.included(base)
       unless Rails.application.config.consider_all_requests_local
+        base.rescue_from Exception, :with => :render_500_error
         base.rescue_from ActionController::RoutingError, :with => :render_404_error
         base.rescue_from ActionController::UnknownController, :with => :render_404_error
         base.rescue_from ::AbstractController::ActionNotFound, :with => :render_404_error
+
       end
     end
 
@@ -30,6 +32,11 @@ module Errship3
     def render_404_error(exception = nil, errship3_scope = false)
       render :template => '/errship3/standard', :locals => {
         :status_code => 404, :errship3_scope => errship3_scope }, :status => (Errship3.status_code_success ? 200 : 404)
+    end
+
+    def render_500_error(exception = nil, errship3_scope = false)
+      render :template => '/errship3/standard', :locals => {
+          :status_code => 500, :errship3_scope => errship3_scope }, :status => (Errship3.status_code_success ? 200 : 500)
     end
 
     # A blank page with just the layout and flash message, which can be redirected to when
